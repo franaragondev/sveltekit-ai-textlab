@@ -83,7 +83,7 @@
 		<button
 			on:click={handleSubmit}
 			class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-			disabled={!ready || isLoading}
+			disabled={!ready || isLoading || !inputText}
 		>
 			{#if isLoading}
 				<span class="flex items-center justify-center">

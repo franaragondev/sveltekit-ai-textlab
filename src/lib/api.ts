@@ -9,13 +9,3 @@ export async function analyzeText(text: string) {
 	if (!r.ok) throw new Error('Sentiment request failed');
 	return r.json() as Promise<{ label: string; score: number }>;
 }
-
-export async function summarizeText(text: string) {
-	const r = await fetch(`${API_URL}/api/summarize`, {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({ text })
-	});
-	if (!r.ok) throw new Error('Summarization request failed');
-	return r.json() as Promise<{ summary: string }>;
-}
